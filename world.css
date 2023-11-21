@@ -1,1 +1,10 @@
 /* Add your own styles */
+body{
+    background-color: lightblue;
+    color: black;
+
+}
+
+table, th, td {
+    border: 1px solid;
+  }

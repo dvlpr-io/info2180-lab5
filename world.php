@@ -10,6 +10,12 @@ $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $p
 $country = isset($_GET ['country']) ? $_GET ['country'] : '';
 $stmt = $conn->prepare ("SELECT * FROM countries WHERE name LIKE :country");
 $stmt ->execute(['country' => '%' . $country . '%']);
+// $codes = $conn->prepare ("SELECT code FROM countries WHERE name LIKE :country");
+// $codes ->execute(['country' => '%' . $country . '%']);
+
+// $stmt_cities = $conn->prepare ("SELECT * FROM cities WHERE country_code IN :country");
+// $stmt_cities ->execute(['country' => $codes]);
+
 
 if ($_SERVER[ 'REQUEST_METHOD'] == 'GET'){
   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
